@@ -47,6 +47,11 @@ function dateBuilder(d) {
     let date = d.getDate();
     let month = months[d.getMonth()];
     let year = d.getFullYear();
+    let hour = d.getHours();
+    let min = d.getMinutes();
+    let time = hour + ':' + min;
+    let sep = ',';
 
-    return `${day} ${date} ${month} ${year}`;
+    return `${day} ${date} ${month} ${year}${sep} ${time}`;
+
 }
