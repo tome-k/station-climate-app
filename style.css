@@ -8,21 +8,34 @@
 
 body {
   font-family: "Kaushan Script", cursive;
-  background-image: url("img/thunderstorm-4234254_1920.jpg");
-  background-size: cover;
-  background-position: center;
   color: #ffffff;
 }
 
 .app-wrap {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  letter-spacing: 0.1rem;
   background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0.6)
   );
+}
+
+.slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* relative to nearest positioned ancestor and not nearest block-level ancestor - alternatively: width: 100vw; */
+  height: 100%; /* relative to nearest positioned ancestor and not nearest block-level ancestor - alternatively: height: 100vh; */
+  object-fit: cover;
+  z-index: -1;
+  /* filter: brightness(50%); */ /* 0% black, 100% original image, values > 100% are allowed for brighter than original image. */
+  /* display: none; */
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
 }
 
 header {
@@ -43,7 +56,7 @@ header input {
   border-bottom: 3px solid #df8e00;
   font-size: 20px;
   font-weight: 300;
-  transform: 0.2s ease-out;
+  transition: 0.3s ease-in-out;
 }
 
 header input:focus {
