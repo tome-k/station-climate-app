@@ -79,7 +79,9 @@ main {
 }
 
 .location .date {
-  font-size: 1.5rem;
+  padding-top: 1.5rem;
+  font-size: 2.1rem;
+  border-bottom: 1px solid #fff;
 }
 
 .current .temp {
