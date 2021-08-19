@@ -75,6 +75,8 @@ function dateBuilder(d) {
   let year = d.getFullYear();
   let hour = d.getHours();
   let min = d.getMinutes();
+  if (min < 10) {
+    min = "0" + min;
   let time = hour + ":" + min;
   let sep = ",";
 
